@@ -42,7 +42,7 @@ header {
 }
 
 aside {
-    
+    background-color: white;
     width:0vw;
     font-family:'Hepta Slab', Helvetica, Arial;
     transition:all ease .2s;
