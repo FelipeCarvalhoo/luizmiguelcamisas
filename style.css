@@ -42,7 +42,7 @@ header {
 }
 
 aside {
-    background-color:#9ccbe6;
+    
     width:0vw;
     font-family:'Hepta Slab', Helvetica, Arial;
     transition:all ease .2s;
@@ -88,7 +88,7 @@ h3 {
     height:200px;
     background-color:#EEE;
     border-radius:100px;
-    box-shadow:0px 10px 50px rgba(0, 0, 0, 0.2);
+  
 }
 .camisa-item--img img {
     width:100%;

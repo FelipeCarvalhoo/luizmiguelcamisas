@@ -5,7 +5,7 @@ let modalKey = 0;
 const c = (el)=>document.querySelector(el);
 const cs = (el)=>document.querySelectorAll(el);
 
-pizzaJson.map((item, index)=>{ 
+camisaJson.map((item, index)=>{ 
     let pizzaItem = document.querySelector('.models .camisa-item').cloneNode(true);
     
     pizzaItem.setAttribute('data-key', index);
@@ -22,17 +22,16 @@ pizzaJson.map((item, index)=>{
         
 
 
-        c('.pizzaBig img').src = pizzaJson[key].img 
-        c('.pizzaInfo h1').innerHTML = pizzaJson[key].name;
-        c('.pizzaInfo--desc').innerHTML = pizzaJson[key].description;
-        c('.pizzaInfo--actualPrice').innerHTML = `R$ ${pizzaJson[key].price.toFixed(2)}`;
-     // ERROR . c('pizzaInfo--actualPrice').innerHTML = `R$ ${pizzaJson[key].price.toFixed(2)}`;
+        c('.pizzaBig img').src = camisaJson[key].img 
+        c('.pizzaInfo h1').innerHTML = camisaJson[key].name;
+        c('.pizzaInfo--desc').innerHTML = camisaJson[key].description;
+        c('.pizzaInfo--actualPrice').innerHTML = `R$ ${camisaJson[key].price.toFixed(2)}`;
         c('.pizzaInfo--size.selected').classList.remove('selected');
         cs('.pizzaInfo--size').forEach((size, sizeIndex)=>{
             if(sizeIndex == 2) {
                 size.classList.add('selected');
             }
-            size.querySelector('span').innerHTML = pizzaJson[key].sizes[sizeIndex];
+            size.querySelector('span').innerHTML = camisaJson[key].sizes[sizeIndex];
         });
         c('.pizzaInfo--qt').innerHTML = modalQt;
         c('.pizzaWindowArea').style.opacity = 0;
@@ -79,7 +78,7 @@ pizzaJson.map((item, index)=>{
      let size = parseInt(c('.pizzaInfo--size.selected').getAttribute('data-key'));
      
      //As mesmas pizzas escolhidas tem que estar juntas, mesmo depois de ja te-las escolhido...
-     let identifier = pizzaJson[modalKey].id+'@'+size;
+     let identifier = camisaJson[modalKey].id+'@'+size;
 
      let key = cart.findIndex ((item)=>item.identifier == identifier);
      if(key > -1) {
@@ -88,7 +87,7 @@ pizzaJson.map((item, index)=>{
      else {
      cart.push({
         identifier,
-        id:pizzaJson[modalKey].id,
+        id:camisaJson[modalKey].id,
         size,
         qt:modalQt
      });
@@ -121,7 +120,7 @@ pizzaJson.map((item, index)=>{
 
 
         for (let i in cart) {
-            let pizzaItem = pizzaJson.find((item)=>item.id == cart[i].id)
+            let pizzaItem = camisaJson.find((item)=>item.id == cart[i].id)
             let cartItem = c('.models .cart--item').cloneNode(true);
             subtotal += pizzaItem.price * cart[i].qt;
 
