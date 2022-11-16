@@ -19,7 +19,6 @@ header {
     top:0;
     right:0;
     height:60px;
-    background-color:yellow;
     display:none;
     justify-content: flex-end;
     align-items: center;
@@ -27,7 +26,7 @@ header {
 .menu-openner {
     margin-right: 15px;
     font-size: 26px;
-    background-color:green;
+    background-color:rgb(27, 219, 203);
     padding: 5px 20px;
     border-radius: 5px;
 }
